@@ -12,9 +12,10 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@android:color/white"
+        app:tabBackground="@android:color/white"
         app:tabMode="scrollable"
-        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget" />
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabTextColor="@color/design_default_color_primary" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager"

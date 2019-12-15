@@ -2,8 +2,6 @@ package com.xiaozhejun.hencoderpractice.practice1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.viewpager.widget.ViewPager
-import com.google.android.material.tabs.TabLayout
 import com.xiaozhejun.hencoderpractice.R
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
