@@ -1,4 +1,4 @@
-package com.xiaozhejun.hencoderpractice.practice1
+package com.xiaozhejun.hencoderpractice
 
 import androidx.fragment.app.Fragment
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import androidx.annotation.LayoutRes
-import com.xiaozhejun.hencoderpractice.R
 
 
 class PageFragment : Fragment() {

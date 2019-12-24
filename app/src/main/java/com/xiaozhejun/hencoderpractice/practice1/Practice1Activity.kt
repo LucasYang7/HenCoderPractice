@@ -7,6 +7,7 @@ import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
+import com.xiaozhejun.hencoderpractice.PageFragment
 import kotlinx.android.synthetic.main.activity_practice1.*
 
 
