@@ -29,6 +29,8 @@ class Practice16TextPathView : View {
 
         // 使用 Paint.getTextPath() 来获取文字的 Path
 
+        paint.getTextPath(text, 0, text.length, 50f, 400f, textPath)
+
         pathPaint.style = Paint.Style.STROKE
     }
 

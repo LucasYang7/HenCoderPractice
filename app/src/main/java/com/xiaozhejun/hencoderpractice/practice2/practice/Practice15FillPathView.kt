@@ -49,6 +49,7 @@ class Practice15FillPathView : View {
 
         canvas.save()
         canvas.translate(500f, 0f)
+        paint.getFillPath(path, path1)
         canvas.drawPath(path1, pathPaint)
         canvas.restore()
 
@@ -61,6 +62,7 @@ class Practice15FillPathView : View {
 
         canvas.save()
         canvas.translate(500f, 200f)
+        paint.getFillPath(path, path2)
         canvas.drawPath(path2, pathPaint)
         canvas.restore()
 
@@ -73,6 +75,7 @@ class Practice15FillPathView : View {
 
         canvas.save()
         canvas.translate(500f, 400f)
+        paint.getFillPath(path, path3)
         canvas.drawPath(path3, pathPaint)
         canvas.restore()
     }
