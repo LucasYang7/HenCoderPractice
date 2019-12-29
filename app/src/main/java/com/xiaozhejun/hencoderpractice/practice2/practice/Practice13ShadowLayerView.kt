@@ -2,6 +2,7 @@ package com.xiaozhejun.hencoderpractice.practice2.practice
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
@@ -22,6 +23,7 @@ class Practice13ShadowLayerView : View {
 
     init {
         // 使用 Paint.setShadowLayer() 设置阴影
+        paint.setShadowLayer(10f,0f,0f,Color.RED)
     }
 
     override fun onDraw(canvas: Canvas) {
