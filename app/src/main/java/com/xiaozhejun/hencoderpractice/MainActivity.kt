@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.xiaozhejun.hencoderpractice.practice1.Practice1Activity
 import com.xiaozhejun.hencoderpractice.practice2.Practice2Activity
+import com.xiaozhejun.hencoderpractice.practice3.Practice3Activity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         }
         tv_goto_practice2.setOnClickListener {
             var intent = Intent(this@MainActivity, Practice2Activity::class.java)
+            this@MainActivity.startActivity(intent)
+        }
+        tv_goto_practice3.setOnClickListener {
+            var intent = Intent(this@MainActivity, Practice3Activity::class.java)
             this@MainActivity.startActivity(intent)
         }
     }
