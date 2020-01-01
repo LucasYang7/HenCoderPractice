@@ -30,5 +30,7 @@ class Practice01DrawTextView : View {
 
         // 使用 drawText() 来绘制文字
         // 文字坐标： (50, 100)
+        // 注意（50,100）不是TextView左上角的坐标
+        canvas.drawText("Hello HenCoder", 50f, 100f, paint)
     }
 }
