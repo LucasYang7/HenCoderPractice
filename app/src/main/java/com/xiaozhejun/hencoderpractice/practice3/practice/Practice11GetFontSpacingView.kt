@@ -4,9 +4,15 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 
 class Practice11GetFontSpacingView : View {
+
+    companion object {
+        const val TAG = "GetFontSpacing"
+    }
+
     internal var paint = Paint(Paint.ANTI_ALIAS_FLAG)
     internal var text = "Hello HenCoder"
 
@@ -29,12 +35,14 @@ class Practice11GetFontSpacingView : View {
         super.onDraw(canvas)
 
         // 使用 Paint.getFontSpacing() 来获取推荐的行距
-        val spacing = 20f
+        val spacing = paint.fontSpacing
 
         canvas.drawText(text, 50f, 100f, paint)
 
         canvas.drawText(text, 50f, 100 + spacing, paint)
 
         canvas.drawText(text, 50f, 100 + spacing * 2, paint)
+
+        Log.d(TAG, "font spacing is $spacing.")
     }
 }
