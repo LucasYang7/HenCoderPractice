@@ -32,13 +32,19 @@ class Practice10SetTextAlignView : View {
 
         // 使用 Paint.setTextAlign() 来调整文字对齐方式
 
-        // 第一处：使用 Paint.Align.LEFT
+        // 第一处：使用 Paint.Align.LEFT 文字的最左边与坐标[x,y]对齐
+        // The text is drawn to the right of the x,y origin
+        paint.textAlign = Paint.Align.LEFT
         canvas.drawText(text, (width / 2).toFloat(), 100f, paint)
 
-        // 第二处：使用 Paint.Align.CENTER
+        // 第二处：使用 Paint.Align.CENTER 文字的最中间与坐标[x,y]对齐
+        // The text is drawn centered horizontally on the x,y origin
+        paint.textAlign = Paint.Align.CENTER
         canvas.drawText(text, (width / 2).toFloat(), 200f, paint)
 
-        // 第三处：使用 Paint.Align.RIGHT
+        // 第三处：使用 Paint.Align.RIGHT 文字的最右边与坐标[x,y]对齐
+        // The text is drawn to the left of the x,y origin
+        paint.textAlign = Paint.Align.RIGHT
         canvas.drawText(text, (width / 2).toFloat(), 300f, paint)
     }
 }
