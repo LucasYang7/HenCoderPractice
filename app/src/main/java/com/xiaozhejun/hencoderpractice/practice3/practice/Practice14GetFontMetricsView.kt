@@ -7,23 +7,16 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 
-class Practice14GetFontMetricsView : View {
-    internal var paint1 = Paint(Paint.ANTI_ALIAS_FLAG)
-    internal var paint2 = Paint(Paint.ANTI_ALIAS_FLAG)
-    internal var texts = arrayOf("A", "a", "J", "j", "Â", "â")
+class Practice14GetFontMetricsView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 10
+) : View(context, attrs, defStyleAttr) {
+    private var paint1 = Paint(Paint.ANTI_ALIAS_FLAG)
+    private var paint2 = Paint(Paint.ANTI_ALIAS_FLAG)
+    private var texts = arrayOf("A", "a", "J", "j", "Â", "â")
     internal var top = 200
     internal var bottom = 400
-
-    constructor(context: Context) : super(context) {}
-
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {}
-
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
-        context,
-        attrs,
-        defStyleAttr
-    ) {
-    }
 
     init {
         paint1.style = Paint.Style.STROKE
@@ -42,11 +35,14 @@ class Practice14GetFontMetricsView : View {
         // 这种居中算法的优点是，可以让不同的文字的 baseline 对齐
 
         val middle = (top + bottom) / 2
-        canvas.drawText(texts[0], 100f, middle.toFloat(), paint2)
-        canvas.drawText(texts[1], 200f, middle.toFloat(), paint2)
-        canvas.drawText(texts[2], 300f, middle.toFloat(), paint2)
-        canvas.drawText(texts[3], 400f, middle.toFloat(), paint2)
-        canvas.drawText(texts[4], 500f, middle.toFloat(), paint2)
-        canvas.drawText(texts[5], 600f, middle.toFloat(), paint2)
+        val fontAscent = paint2.fontMetrics.ascent
+        val fontDescent = paint2.fontMetrics.descent
+        val yOffSet = -(fontAscent + fontDescent) / 2.0f
+        canvas.drawText(texts[0], 100f, yOffSet + middle.toFloat(), paint2)
+        canvas.drawText(texts[1], 200f, yOffSet + middle.toFloat(), paint2)
+        canvas.drawText(texts[2], 300f, yOffSet + middle.toFloat(), paint2)
+        canvas.drawText(texts[3], 400f, yOffSet + middle.toFloat(), paint2)
+        canvas.drawText(texts[4], 500f, yOffSet + middle.toFloat(), paint2)
+        canvas.drawText(texts[5], 600f, yOffSet + middle.toFloat(), paint2)
     }
 }
