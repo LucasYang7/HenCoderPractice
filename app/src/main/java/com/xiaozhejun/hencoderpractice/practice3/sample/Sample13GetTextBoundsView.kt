@@ -35,6 +35,7 @@ class Sample13GetTextBoundsView : View {
 
         val textBounds = Rect()
         paint2.getTextBounds(texts[0], 0, texts[0].length, textBounds)
+        // 为什么要-(textBounds.top + textBounds.bottom)? textBounds.top和textBounds.bottom各自代表什么?
         yOffsets[0] = -(textBounds.top + textBounds.bottom) / 2
         paint2.getTextBounds(texts[1], 0, texts[1].length, textBounds)
         yOffsets[1] = -(textBounds.top + textBounds.bottom) / 2
