@@ -22,6 +22,18 @@ class Practice01ClipRectView @JvmOverloads constructor(
 
         val left = (width - bitmap.width) / 2.0f
         val top = (height - bitmap.height) / 2.0f
+        // 保存当前画布的默认绘制范围
+        canvas?.save()
+        // 绘制的内容将控制在左上角(left + 10f,top + 10f)
+        // 与右下角(top + bitmap.height - 10f,left + bitmap.width - 10f)之间
+        canvas?.clipRect(
+            left + 10f,
+            top + 10f,
+            top + bitmap.height - 10f,
+            left + bitmap.width - 10f
+        )
         canvas?.drawBitmap(bitmap, left, top, paint)
+        // 抹去上面的clipRect操作，恢复画布save之前的默认绘制范围
+        canvas?.restore()
     }
 }
