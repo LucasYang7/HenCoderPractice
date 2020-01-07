@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
 import com.xiaozhejun.hencoderpractice.PageFragment
-import kotlinx.android.synthetic.main.activity_practice1.*
+import kotlinx.android.synthetic.main.activity_practice.*
 import com.xiaozhejun.hencoderpractice.R
 
 class Practice3Activity : AppCompatActivity() {
@@ -117,7 +117,7 @@ class Practice3Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_practice1)
+        setContentView(R.layout.activity_practice)
         pager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
             override fun getItem(position: Int): Fragment {
                 val pageModel = pageModels[position]
