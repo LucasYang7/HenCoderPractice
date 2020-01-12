@@ -27,8 +27,15 @@ class Practice05RotateView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-
+        canvas.save()
+        // 旋转角度的单位是度 例如：45度
+        canvas.rotate(180f, 200f + bitmap.width / 2, 200f + bitmap.height / 2)
         canvas.drawBitmap(bitmap, point1.x.toFloat(), point1.y.toFloat(), paint)
+        canvas.restore()
+
+        canvas.save()
+        canvas.rotate(45f, 600f + bitmap.width / 2, 200f + bitmap.height / 2)
         canvas.drawBitmap(bitmap, point2.x.toFloat(), point2.y.toFloat(), paint)
+        canvas.restore()
     }
 }
