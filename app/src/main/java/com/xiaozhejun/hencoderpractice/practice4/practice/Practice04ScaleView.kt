@@ -28,7 +28,15 @@ class Practice04ScaleView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
+        canvas.save()
+        // 以（300,300）为中心点，缩放画布为1.5倍尺寸
+        canvas.scale(1.5f, 1.5f, 300f, 300f)
         canvas.drawBitmap(bitmap, point1.x.toFloat(), point1.y.toFloat(), paint)
+        canvas.restore()
+
+        canvas.save()
+        canvas.scale(0.5f, 2.0f, 700f, 300f)
         canvas.drawBitmap(bitmap, point2.x.toFloat(), point2.y.toFloat(), paint)
+        canvas.restore()
     }
 }
