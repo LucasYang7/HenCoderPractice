@@ -1,11 +1,7 @@
 package com.xiaozhejun.hencoderpractice.practice4.practice
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Canvas
-import android.graphics.Paint
-import android.graphics.Point
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import com.xiaozhejun.hencoderpractice.R
@@ -20,7 +16,7 @@ class Practice09MatrixRotateView @JvmOverloads constructor(
     internal var bitmap: Bitmap
     internal var point1 = Point(200, 200)
     internal var point2 = Point(600, 200)
-
+    internal var matrix = Matrix()
     init {
         bitmap = BitmapFactory.decodeResource(resources, R.drawable.maps)
     }
@@ -28,7 +24,28 @@ class Practice09MatrixRotateView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
+        matrix.reset()
+        // 以图片为中心，顺时针旋转180度
+        matrix.preRotate(
+            180f,
+            point1.x.toFloat() + bitmap.width / 2,
+            point1.y.toFloat() + bitmap.height / 2
+        )
+        canvas.save()
+        canvas.concat(matrix)
         canvas.drawBitmap(bitmap, point1.x.toFloat(), point1.y.toFloat(), paint)
+        canvas.restore()
+
+        matrix.reset()
+        // 以图片为中心，顺时针旋转45度
+        matrix.preRotate(
+            45f,
+            point2.x.toFloat() + bitmap.width / 2,
+            point2.y.toFloat() + bitmap.height / 2
+        )
+        canvas.save()
+        canvas.concat(matrix)
         canvas.drawBitmap(bitmap, point2.x.toFloat(), point2.y.toFloat(), paint)
+        canvas.restore()
     }
 }
